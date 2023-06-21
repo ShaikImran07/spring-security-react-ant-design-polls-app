@@ -1,6 +1,6 @@
 #### Stage 1: Build the application
 FROM openjdk:8-jdk-alpine as build
-sudo apt install dos2unix
+RUN apt install dos2unix
 # Set the current working directory inside the image
 WORKDIR /app
 
