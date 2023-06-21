@@ -1,6 +1,6 @@
 #### Stage 1: Build the application
 FROM openjdk:8-jdk-alpine as build
-apt-get add --no-cache bash
+apk add --no-cache bash
 # Set the current working directory inside the image
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY pom.xml .
 # the pom.xml file has changed.
 RUN pwd
 RUN ls
-RUN ./mvnw dependency:go-offline -B
+RUN /bin/sh ./mvnw dependency:go-offline -B
 
 # Copy the project source
 COPY src src
